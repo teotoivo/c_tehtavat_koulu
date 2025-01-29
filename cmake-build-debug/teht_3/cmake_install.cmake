@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/teotoivo/CLionProjects/c_tehtavat_koulu/teht_3
+# Install script for directory: C:/Users/teoma/CLionProjects/tehtavat/teht_3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2024.3.2/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/mingw/bin/objdump.exe")
 endif()
 
