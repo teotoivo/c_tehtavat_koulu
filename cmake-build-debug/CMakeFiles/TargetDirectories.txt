@@ -27,3 +27,12 @@ C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_8/CMakeFiles/rebuil
 C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_9/CMakeFiles/teht_9.dir
 C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_9/CMakeFiles/edit_cache.dir
 C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_9/CMakeFiles/rebuild_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_10/CMakeFiles/teht_10.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_10/CMakeFiles/edit_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_10/CMakeFiles/rebuild_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_11/CMakeFiles/teht_11.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_11/CMakeFiles/edit_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_11/CMakeFiles/rebuild_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_12/CMakeFiles/teht_12.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_12/CMakeFiles/edit_cache.dir
+C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_12/CMakeFiles/rebuild_cache.dir
