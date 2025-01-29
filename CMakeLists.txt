@@ -6,5 +6,6 @@ set(CMAKE_C_STANDARD 23)
 add_subdirectory(teht_1)
 add_subdirectory(teht_2)
 add_subdirectory(teht_3)
-
-
+add_subdirectory(teht_4)
+add_subdirectory(teht_5)
+add_subdirectory(teht_6)
