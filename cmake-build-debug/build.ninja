@@ -247,11 +247,572 @@ build teht_3/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build teht_3/rebuild_cache: phony teht_3/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_4
+
+
+#############################################
+# Order-only phony target for teht_4
+
+build cmake_object_order_depends_target_teht_4: phony || .
+
+build teht_4/CMakeFiles/teht_4.dir/main.c.obj: C_COMPILER__teht_4_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_4/main.c || cmake_object_order_depends_target_teht_4
+  DEP_FILE = teht_4\CMakeFiles\teht_4.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_4\CMakeFiles\teht_4.dir
+  OBJECT_FILE_DIR = teht_4\CMakeFiles\teht_4.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_4
+
+
+#############################################
+# Link the executable teht_4\teht_4.exe
+
+build teht_4/teht_4.exe: C_EXECUTABLE_LINKER__teht_4_Debug teht_4/CMakeFiles/teht_4.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_4\CMakeFiles\teht_4.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_4\teht_4.exe
+  TARGET_IMPLIB = teht_4\libteht_4.dll.a
+  TARGET_PDB = teht_4.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_4/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_4 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_4/edit_cache: phony teht_4/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_4/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_4 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_4/rebuild_cache: phony teht_4/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_5
+
+
+#############################################
+# Order-only phony target for teht_5
+
+build cmake_object_order_depends_target_teht_5: phony || .
+
+build teht_5/CMakeFiles/teht_5.dir/main.c.obj: C_COMPILER__teht_5_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_5/main.c || cmake_object_order_depends_target_teht_5
+  DEP_FILE = teht_5\CMakeFiles\teht_5.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_5\CMakeFiles\teht_5.dir
+  OBJECT_FILE_DIR = teht_5\CMakeFiles\teht_5.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_5
+
+
+#############################################
+# Link the executable teht_5\teht_5.exe
+
+build teht_5/teht_5.exe: C_EXECUTABLE_LINKER__teht_5_Debug teht_5/CMakeFiles/teht_5.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_5\CMakeFiles\teht_5.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_5\teht_5.exe
+  TARGET_IMPLIB = teht_5\libteht_5.dll.a
+  TARGET_PDB = teht_5.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_5/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_5 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_5/edit_cache: phony teht_5/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_5/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_5 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_5/rebuild_cache: phony teht_5/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_6
+
+
+#############################################
+# Order-only phony target for teht_6
+
+build cmake_object_order_depends_target_teht_6: phony || .
+
+build teht_6/CMakeFiles/teht_6.dir/main.c.obj: C_COMPILER__teht_6_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_6/main.c || cmake_object_order_depends_target_teht_6
+  DEP_FILE = teht_6\CMakeFiles\teht_6.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_6\CMakeFiles\teht_6.dir
+  OBJECT_FILE_DIR = teht_6\CMakeFiles\teht_6.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_6
+
+
+#############################################
+# Link the executable teht_6\teht_6.exe
+
+build teht_6/teht_6.exe: C_EXECUTABLE_LINKER__teht_6_Debug teht_6/CMakeFiles/teht_6.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_6\CMakeFiles\teht_6.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_6\teht_6.exe
+  TARGET_IMPLIB = teht_6\libteht_6.dll.a
+  TARGET_PDB = teht_6.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_6/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_6 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_6/edit_cache: phony teht_6/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_6/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_6 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_6/rebuild_cache: phony teht_6/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_7
+
+
+#############################################
+# Order-only phony target for teht_7
+
+build cmake_object_order_depends_target_teht_7: phony || .
+
+build teht_7/CMakeFiles/teht_7.dir/main.c.obj: C_COMPILER__teht_7_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_7/main.c || cmake_object_order_depends_target_teht_7
+  DEP_FILE = teht_7\CMakeFiles\teht_7.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_7\CMakeFiles\teht_7.dir
+  OBJECT_FILE_DIR = teht_7\CMakeFiles\teht_7.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_7
+
+
+#############################################
+# Link the executable teht_7\teht_7.exe
+
+build teht_7/teht_7.exe: C_EXECUTABLE_LINKER__teht_7_Debug teht_7/CMakeFiles/teht_7.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_7\CMakeFiles\teht_7.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_7\teht_7.exe
+  TARGET_IMPLIB = teht_7\libteht_7.dll.a
+  TARGET_PDB = teht_7.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_7/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_7 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_7/edit_cache: phony teht_7/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_7/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_7 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_7/rebuild_cache: phony teht_7/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_8
+
+
+#############################################
+# Order-only phony target for teht_8
+
+build cmake_object_order_depends_target_teht_8: phony || .
+
+build teht_8/CMakeFiles/teht_8.dir/main.c.obj: C_COMPILER__teht_8_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_8/main.c || cmake_object_order_depends_target_teht_8
+  DEP_FILE = teht_8\CMakeFiles\teht_8.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_8\CMakeFiles\teht_8.dir
+  OBJECT_FILE_DIR = teht_8\CMakeFiles\teht_8.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_8
+
+
+#############################################
+# Link the executable teht_8\teht_8.exe
+
+build teht_8/teht_8.exe: C_EXECUTABLE_LINKER__teht_8_Debug teht_8/CMakeFiles/teht_8.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_8\CMakeFiles\teht_8.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_8\teht_8.exe
+  TARGET_IMPLIB = teht_8\libteht_8.dll.a
+  TARGET_PDB = teht_8.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_8/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_8 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_8/edit_cache: phony teht_8/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_8/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_8 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_8/rebuild_cache: phony teht_8/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_9
+
+
+#############################################
+# Order-only phony target for teht_9
+
+build cmake_object_order_depends_target_teht_9: phony || .
+
+build teht_9/CMakeFiles/teht_9.dir/main.c.obj: C_COMPILER__teht_9_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_9/main.c || cmake_object_order_depends_target_teht_9
+  DEP_FILE = teht_9\CMakeFiles\teht_9.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_9\CMakeFiles\teht_9.dir
+  OBJECT_FILE_DIR = teht_9\CMakeFiles\teht_9.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_9
+
+
+#############################################
+# Link the executable teht_9\teht_9.exe
+
+build teht_9/teht_9.exe: C_EXECUTABLE_LINKER__teht_9_Debug teht_9/CMakeFiles/teht_9.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_9\CMakeFiles\teht_9.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_9\teht_9.exe
+  TARGET_IMPLIB = teht_9\libteht_9.dll.a
+  TARGET_PDB = teht_9.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_9/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_9 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_9/edit_cache: phony teht_9/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_9/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_9 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_9/rebuild_cache: phony teht_9/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_10
+
+
+#############################################
+# Order-only phony target for teht_10
+
+build cmake_object_order_depends_target_teht_10: phony || .
+
+build teht_10/CMakeFiles/teht_10.dir/main.c.obj: C_COMPILER__teht_10_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_10/main.c || cmake_object_order_depends_target_teht_10
+  DEP_FILE = teht_10\CMakeFiles\teht_10.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_10\CMakeFiles\teht_10.dir
+  OBJECT_FILE_DIR = teht_10\CMakeFiles\teht_10.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_10
+
+
+#############################################
+# Link the executable teht_10\teht_10.exe
+
+build teht_10/teht_10.exe: C_EXECUTABLE_LINKER__teht_10_Debug teht_10/CMakeFiles/teht_10.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_10\CMakeFiles\teht_10.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_10\teht_10.exe
+  TARGET_IMPLIB = teht_10\libteht_10.dll.a
+  TARGET_PDB = teht_10.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_10/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_10 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_10/edit_cache: phony teht_10/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_10/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_10 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_10/rebuild_cache: phony teht_10/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_11
+
+
+#############################################
+# Order-only phony target for teht_11
+
+build cmake_object_order_depends_target_teht_11: phony || .
+
+build teht_11/CMakeFiles/teht_11.dir/main.c.obj: C_COMPILER__teht_11_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_11/main.c || cmake_object_order_depends_target_teht_11
+  DEP_FILE = teht_11\CMakeFiles\teht_11.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_11\CMakeFiles\teht_11.dir
+  OBJECT_FILE_DIR = teht_11\CMakeFiles\teht_11.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_11
+
+
+#############################################
+# Link the executable teht_11\teht_11.exe
+
+build teht_11/teht_11.exe: C_EXECUTABLE_LINKER__teht_11_Debug teht_11/CMakeFiles/teht_11.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_11\CMakeFiles\teht_11.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_11\teht_11.exe
+  TARGET_IMPLIB = teht_11\libteht_11.dll.a
+  TARGET_PDB = teht_11.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_11/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_11 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_11/edit_cache: phony teht_11/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_11/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_11 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_11/rebuild_cache: phony teht_11/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teht_12
+
+
+#############################################
+# Order-only phony target for teht_12
+
+build cmake_object_order_depends_target_teht_12: phony || .
+
+build teht_12/CMakeFiles/teht_12.dir/main.c.obj: C_COMPILER__teht_12_unscanned_Debug C$:/Users/teoma/CLionProjects/tehtavat/teht_12/main.c || cmake_object_order_depends_target_teht_12
+  DEP_FILE = teht_12\CMakeFiles\teht_12.dir\main.c.obj.d
+  FLAGS = -g -std=gnu2x -fdiagnostics-color=always
+  OBJECT_DIR = teht_12\CMakeFiles\teht_12.dir
+  OBJECT_FILE_DIR = teht_12\CMakeFiles\teht_12.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teht_12
+
+
+#############################################
+# Link the executable teht_12\teht_12.exe
+
+build teht_12/teht_12.exe: C_EXECUTABLE_LINKER__teht_12_Debug teht_12/CMakeFiles/teht_12.dir/main.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = teht_12\CMakeFiles\teht_12.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teht_12\teht_12.exe
+  TARGET_IMPLIB = teht_12\libteht_12.dll.a
+  TARGET_PDB = teht_12.exe.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build teht_12/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_12 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build teht_12/edit_cache: phony teht_12/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build teht_12/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug\teht_12 && "C:\Program Files\JetBrains\CLion 2024.3.1.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\teoma\CLionProjects\tehtavat -BC:\Users\teoma\CLionProjects\tehtavat\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build teht_12/rebuild_cache: phony teht_12/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build teht_1: phony teht_1/teht_1.exe
 
 build teht_1.exe: phony teht_1/teht_1.exe
+
+build teht_10: phony teht_10/teht_10.exe
+
+build teht_10.exe: phony teht_10/teht_10.exe
+
+build teht_11: phony teht_11/teht_11.exe
+
+build teht_11.exe: phony teht_11/teht_11.exe
+
+build teht_12: phony teht_12/teht_12.exe
+
+build teht_12.exe: phony teht_12/teht_12.exe
 
 build teht_2: phony teht_2/teht_2.exe
 
@@ -261,6 +822,30 @@ build teht_3: phony teht_3/teht_3.exe
 
 build teht_3.exe: phony teht_3/teht_3.exe
 
+build teht_4: phony teht_4/teht_4.exe
+
+build teht_4.exe: phony teht_4/teht_4.exe
+
+build teht_5: phony teht_5/teht_5.exe
+
+build teht_5.exe: phony teht_5/teht_5.exe
+
+build teht_6: phony teht_6/teht_6.exe
+
+build teht_6.exe: phony teht_6/teht_6.exe
+
+build teht_7: phony teht_7/teht_7.exe
+
+build teht_7.exe: phony teht_7/teht_7.exe
+
+build teht_8: phony teht_8/teht_8.exe
+
+build teht_8.exe: phony teht_8/teht_8.exe
+
+build teht_9: phony teht_9/teht_9.exe
+
+build teht_9.exe: phony teht_9/teht_9.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -269,7 +854,7 @@ build teht_3.exe: phony teht_3/teht_3.exe
 #############################################
 # Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug
 
-build all: phony teht_1/all teht_2/all teht_3/all
+build all: phony teht_1/all teht_2/all teht_3/all teht_4/all teht_5/all teht_6/all teht_7/all teht_8/all teht_9/all teht_10/all teht_11/all teht_12/all
 
 # =============================================================================
 
@@ -277,6 +862,27 @@ build all: phony teht_1/all teht_2/all teht_3/all
 # Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_1
 
 build teht_1/all: phony teht_1/teht_1.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_10
+
+build teht_10/all: phony teht_10/teht_10.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_11
+
+build teht_11/all: phony teht_11/teht_11.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_12
+
+build teht_12/all: phony teht_12/teht_12.exe
 
 # =============================================================================
 
@@ -293,20 +899,62 @@ build teht_2/all: phony teht_2/teht_2.exe
 build teht_3/all: phony teht_3/teht_3.exe
 
 # =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_4
+
+build teht_4/all: phony teht_4/teht_4.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_5
+
+build teht_5/all: phony teht_5/teht_5.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_6
+
+build teht_6/all: phony teht_6/teht_6.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_7
+
+build teht_7/all: phony teht_7/teht_7.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_8
+
+build teht_8/all: phony teht_8/teht_8.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/teoma/CLionProjects/tehtavat/cmake-build-debug/teht_9
+
+build teht_9/all: phony teht_9/teht_9.exe
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_1/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_2/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_3/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_10/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_11/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_12/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_1/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_2/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_3/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_4/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_5/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_6/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_7/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_8/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_9/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_1/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_2/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_3/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake C$:/Users/teoma/CLionProjects/tehtavat/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_10/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_11/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_12/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_1/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_2/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_3/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_4/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_5/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_6/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_7/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_8/CMakeLists.txt C$:/Users/teoma/CLionProjects/tehtavat/teht_9/CMakeLists.txt CMakeCache.txt CMakeFiles/3.30.5/CMakeCCompiler.cmake CMakeFiles/3.30.5/CMakeRCCompiler.cmake CMakeFiles/3.30.5/CMakeSystem.cmake: phony
 
 
 #############################################

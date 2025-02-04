@@ -1,0 +1,1 @@
+add_executable(teht_8 main.c)
