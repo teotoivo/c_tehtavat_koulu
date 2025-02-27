@@ -1,1 +1,0 @@
-add_executable(teht_5 main.c)
