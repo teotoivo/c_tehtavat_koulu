@@ -43,7 +43,7 @@ int main(void)
   {
     return EXIT_FAILURE;
   }
-  printf("%s", fileNameBuffer);
+  printf("%s\n", fileNameBuffer);
 
   FILE *fptr = fopen(fileNameBuffer, "r");
   if (fptr == NULL)
