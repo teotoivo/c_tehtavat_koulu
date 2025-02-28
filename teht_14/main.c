@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -5,14 +6,8 @@
 #include <string.h>
 
 #define MAX_FILE_NAME_SIZE 128
-#define MAX_FILE_LINES 40
-#define MAX_FILE_LINE_CONTENT 1028
-
-typedef struct menu_item
-{
-  char name[MAX_FILE_LINE_CONTENT];
-  double price;
-} menu_item;
+#define MAX_FILE_LINES 100
+#define MAX_LINE_LENGTH 80
 
 bool getUserInput(char *buffer, size_t size)
 {
@@ -42,8 +37,12 @@ bool getUserInput(char *buffer, size_t size)
 
 int main(void)
 {
-  char fileNameBuffer[MAX_FILE_LINE_CONTENT];
-  printf("Enter file name: ");
+  char fileNameBuffer[MAX_FILE_NAME_SIZE];
+  char lines[MAX_FILE_LINES][MAX_LINE_LENGTH + 1];
+  int lineCount = 0;
+  FILE *fptr;
+
+  printf("Enter filename: ");
 
   if (getUserInput(fileNameBuffer, MAX_FILE_NAME_SIZE) == false)
   {
@@ -51,50 +50,50 @@ int main(void)
     return EXIT_FAILURE;
   }
 
-  FILE *fptr = fopen(fileNameBuffer, "r");
+  fptr = fopen(fileNameBuffer, "r");
   if (fptr == NULL)
   {
-    perror("Error opening file");
+    fprintf(stderr, "Error: Could not open file '%s' for reading\n",
+            fileNameBuffer);
     return EXIT_FAILURE;
   }
 
-  menu_item menuItemArray[MAX_FILE_LINES];
-
-  char lineBuffer[MAX_FILE_LINE_CONTENT];
-  for (int i = 0; i <= MAX_FILE_LINES &&
-                  fgets(lineBuffer, MAX_FILE_LINE_CONTENT, fptr) != NULL;
-       i++)
+  while (lineCount < MAX_FILE_LINES &&
+         fgets(lines[lineCount], MAX_LINE_LENGTH + 1, fptr) != NULL)
   {
-    char *semicolonPtr = strchr(lineBuffer, ';');
-
-    if (semicolonPtr == NULL)
+    size_t len = strlen(lines[lineCount]);
+    if (len > 0 && lines[lineCount][len - 1] == '\n')
     {
-      perror("Incorrect file formatting");
-      return EXIT_FAILURE;
+      lines[lineCount][len - 1] = '\0';
     }
-    int splitLocation = semicolonPtr - lineBuffer;
-
-    strlcpy(menuItemArray[i].name, lineBuffer, MAX_FILE_LINE_CONTENT);
-    menuItemArray[i].name[splitLocation] = '\0';
-
-    char priceBuffer[MAX_FILE_LINE_CONTENT];
-    strlcpy(priceBuffer, lineBuffer + splitLocation + 2, MAX_FILE_LINE_CONTENT);
-    menuItemArray[i].price = strtod(priceBuffer, NULL);
+    lineCount++;
   }
+
   fclose(fptr);
 
-  printf("%8s\t%s\n", "Price", "Name");
-  printf(
-      "   _____________________________________________________________________"
-      "______________\n");
-  for (int i = 0; true; i++)
+  for (int i = 0; i < lineCount; i++)
   {
-    if (menuItemArray[i].price == 0.0 && strcmp(menuItemArray[i].name, "") == 0)
+    for (int j = 0; lines[i][j] != '\0'; j++)
     {
-      break;
+      lines[i][j] = toupper(lines[i][j]);
     }
-    printf("%8.2f\t%s\n", menuItemArray[i].price, menuItemArray[i].name);
   }
+
+  fptr = fopen(fileNameBuffer, "w");
+  if (fptr == NULL)
+  {
+    fprintf(stderr, "Error: Could not open file '%s' for writing\n",
+            fileNameBuffer);
+    return EXIT_FAILURE;
+  }
+
+  for (int i = 0; i < lineCount; i++)
+  {
+    fprintf(fptr, "%s\n", lines[i]);
+  }
+
+  fclose(fptr);
+  printf("Successfully converted %d lines\n", lineCount);
 
   return EXIT_SUCCESS;
 }
