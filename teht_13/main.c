@@ -54,6 +54,7 @@ int main(void)
   }
 
   char fileContentBuffer[MAX_FILE_CONTENT];
+
   fgets(fileContentBuffer, MAX_FILE_CONTENT, fptr);
   int counter = 0;
   int highest = INT_MIN;
