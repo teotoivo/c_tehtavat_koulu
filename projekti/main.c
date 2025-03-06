@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +10,7 @@
 
 typedef struct
 {
+  int id;
   char make[MAX_STRING_LENGTH];
   char model[MAX_STRING_LENGTH];
   struct tm purchase_date;
@@ -25,6 +27,11 @@ typedef struct CarNode
   struct CarNode *next;
 } CarNode;
 
+// - negative value if a < b
+// - zero if a == b
+// - positive value if a > b
+typedef int (*CompareFunc)(const CarData *a, const CarData *b);
+
 void free_cars(CarNode *head);
 void clear_terminal();
 void print_header();
@@ -36,51 +43,25 @@ bool get_user_input(char *buffer, size_t size);
 bool get_date_from_user(struct tm *date);
 void list_all_cars(CarNode *head);
 char *format_date(int day, int month, int year);
+void print_profit_report(CarNode **head);
+CarNode *insertionSort(CarNode *head, CompareFunc compare);
+int compare_profits_desending(const CarData *a, const CarData *b);
+bool search_cars(CarNode *head);
+void stringToLower(char *str);
+bool stringContains(const char *str, const char *substr);
+int generate_unique_id(CarNode *head);
+bool search_car_by_id(CarNode *head);
+bool sell_car(CarNode *head);
+
+void initialize_test_data(CarNode **head);
 
 int main(void)
 {
+  srand(time(NULL));
   CarNode *head = NULL;
   int choice;
 
-  // for debbugging add a couple cars by default
-  CarData car1 = {
-      .make = "Toyota",
-      .model = "Corolla",
-      .mileage_km = 15000.0,
-      .purchase_price = 20000.0,
-      .has_been_sold = false,
-      .purchase_date = {.tm_year = 2022 - 1900, .tm_mon = 1 - 1, .tm_mday = 15}
-      // 15-01-2022
-  };
-
-  CarData car2 = {
-      .make = "Honda",
-      .model = "Civic",
-      .mileage_km = 25000.0,
-      .purchase_price = 22000.0,
-      .has_been_sold = true,
-      .selling_price = 21000.0,
-      .purchase_date = {.tm_year = 2021 - 1900,
-                        .tm_mon = 5 - 1,
-                        .tm_mday = 10}, // 10-05-2021
-      .selling_date = {.tm_year = 2022 - 1900, .tm_mon = 6 - 1, .tm_mday = 20}
-      // 20-06-2022
-  };
-
-  // Create nodes for the cars and add them to the list
-  CarNode *node1 = malloc(sizeof(CarNode));
-  if (node1 == NULL)
-    return EXIT_FAILURE; // Check for memory allocation failure
-  node1->data = car1;
-  node1->next = head;
-  head = node1;
-
-  CarNode *node2 = malloc(sizeof(CarNode));
-  if (node2 == NULL)
-    return EXIT_FAILURE; // Check for memory allocation failure
-  node2->data = car2;
-  node2->next = head;
-  head = node2;
+  initialize_test_data(&head);
 
   while (1)
   {
@@ -102,15 +83,19 @@ int main(void)
       }
       break;
     case 2:
+      print_profit_report(&head);
       break;
     case 3:
-      break;
-    case 4:
       list_all_cars(head);
       break;
+    case 4:
+      search_cars(head);
+      break;
     case 5:
+      search_car_by_id(head);
       break;
     case 6:
+      sell_car(head);
       break;
     case 7:
       break;
@@ -124,6 +109,91 @@ int main(void)
     }
   }
   free_cars(head);
+}
+
+void initialize_test_data(CarNode **head)
+{
+  srand(time(NULL));
+
+  const char *car_makes[] = {"Toyota",   "Honda",  "Ford",  "BMW",
+                             "Mercedes", "Audi",   "Volvo", "Volkswagen",
+                             "Nissan",   "Hyundai"};
+  const char *car_models[][5] = {
+      {"Corolla", "Camry", "RAV4", "Prius", "Highlander"},
+      {"Civic", "Accord", "CR-V", "Pilot", "Fit"},
+      {"Focus", "Fiesta", "Mustang", "Explorer", "F-150"},
+      {"3 Series", "5 Series", "X3", "X5", "i8"},
+      {"C-Class", "E-Class", "S-Class", "GLC", "GLE"},
+      {"A3", "A4", "Q5", "Q7", "TT"},
+      {"S60", "XC60", "XC90", "V60", "S90"},
+      {"Golf", "Passat", "Tiguan", "Polo", "Jetta"},
+      {"Altima", "Sentra", "Rogue", "Pathfinder", "Maxima"},
+      {"Elantra", "Sonata", "Tucson", "Santa Fe", "Kona"}};
+
+  time_t now = time(NULL);
+  struct tm *current_time = localtime(&now);
+  int current_year = current_time->tm_year;
+  int current_month = current_time->tm_mon;
+
+  for (int i = 0; i < 10; i++)
+  {
+    CarNode *new_car = malloc(sizeof(CarNode));
+    if (new_car == NULL)
+    {
+      printf("Memory allocation failed\n");
+      return;
+    }
+
+    new_car->data.id = generate_unique_id(*head);
+
+    int make_index = rand() % 10;
+    int model_index = rand() % 5;
+
+    strcpy(new_car->data.make, car_makes[make_index]);
+    strcpy(new_car->data.model, car_models[make_index][model_index]);
+
+    new_car->data.mileage_km = 5000.0 + (rand() % 145000);
+
+    int purchase_years_ago = 1 + (rand() % 3);
+    int purchase_months_ago = rand() % 12;
+
+    new_car->data.purchase_date = *current_time;
+    new_car->data.purchase_date.tm_year = current_year - purchase_years_ago;
+    new_car->data.purchase_date.tm_mon =
+        (current_month - purchase_months_ago + 12) % 12;
+    new_car->data.purchase_date.tm_mday = 1 + (rand() % 28);
+
+    new_car->data.purchase_price = 5000.0 + (rand() % 45000);
+
+    new_car->data.has_been_sold = (rand() % 10) < 7;
+
+    if (new_car->data.has_been_sold)
+    {
+      int sell_months_after_purchase =
+          1 + (rand() % (purchase_years_ago * 12 + purchase_months_ago - 1));
+
+      new_car->data.selling_date = new_car->data.purchase_date;
+      new_car->data.selling_date.tm_mon += sell_months_after_purchase;
+      while (new_car->data.selling_date.tm_mon > 11)
+      {
+        new_car->data.selling_date.tm_mon -= 12;
+        new_car->data.selling_date.tm_year++;
+      }
+      new_car->data.selling_date.tm_mday = 1 + (rand() % 28);
+
+      float profit_factor = 0.9 + ((float)rand() / (float)RAND_MAX) * 0.5;
+      new_car->data.selling_price =
+          new_car->data.purchase_price * profit_factor;
+    }
+    else
+    {
+      // Default values for unsold cars
+      new_car->data.selling_price = 0.0;
+    }
+
+    new_car->next = *head;
+    *head = new_car;
+  }
 }
 
 void free_cars(CarNode *head)
@@ -147,16 +217,15 @@ void print_header()
   printf("========================================\n\n");
   printf("1. Add a new car\n");
   printf("2. Print profit report (sorted by profit)\n");
-  printf("3. Print sell time report (sorted by sell time)\n");
-  printf("4. List all cars\n");
-  printf("5. Search cars\n");
+  printf("3. List all cars\n");
+  printf("4. Search cars\n");
+  printf("5. Search car by id\n");
   printf("6. Sell a car\n");
   printf("7. Backup database\n");
   printf("8. Exit\n\n");
 }
 int get_user_choice()
 {
-  int choice;
   char input[MAX_STRING_LENGTH];
 
   printf("Enter your choice (1-8): ");
@@ -171,7 +240,6 @@ int get_user_choice()
 
 float get_float()
 {
-  float choice;
   char input[MAX_STRING_LENGTH];
 
   if (fgets(input, sizeof(input), stdin) == NULL)
@@ -198,6 +266,8 @@ bool add_new_car(CarNode **head)
 {
   CarNode *car_node = malloc(sizeof(CarNode));
   char input_buffer[MAX_STRING_LENGTH];
+
+  car_node->data.id = generate_unique_id(*head);
 
   clear_terminal();
   printf("========================================\n");
@@ -332,9 +402,9 @@ void list_all_cars(CarNode *head)
   printf("====================================================================="
          "=========="
          "========================================\n");
-  printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "Make", "Model",
-         "Purchase Date", "Sell Date", "Mileage", "Buy Price", "Sell Price",
-         "Status");
+  printf("%-10s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n", "ID",
+         "Make", "Model", "Purchase Date", "Sell Date", "Mileage", "Buy Price",
+         "Sell Price", "Status");
   printf("---------------------------------------------------------------------"
          "----------"
          "----------------------------------------\n");
@@ -356,13 +426,11 @@ void list_all_cars(CarNode *head)
 
     while (current != NULL)
     {
-      // Format purchase date
       sprintf(purchase_date_str, "%02d/%02d/%d",
               current->data.purchase_date.tm_mday,
               current->data.purchase_date.tm_mon + 1,
               current->data.purchase_date.tm_year + 1900);
 
-      // Format sell date if car has been sold
       if (current->data.has_been_sold)
       {
         sprintf(sell_date_str, "%02d/%02d/%d",
@@ -381,10 +449,10 @@ void list_all_cars(CarNode *head)
 
       total_investment += current->data.purchase_price;
 
-      // Print car information with aligned columns
-      printf("%-15s %-15s %-15s %-15s %-15.1f €%-14.2f ", current->data.make,
-             current->data.model, purchase_date_str, sell_date_str,
-             current->data.mileage_km, current->data.purchase_price);
+      printf("%-10d %-15s %-15s %-15s %-15s %-15.1f €%-14.2f ",
+             current->data.id, current->data.make, current->data.model,
+             purchase_date_str, sell_date_str, current->data.mileage_km,
+             current->data.purchase_price);
 
       if (current->data.has_been_sold)
       {
@@ -413,4 +481,411 @@ void list_all_cars(CarNode *head)
          "=========="
          "========================================\n\n");
   wait_for_enter();
+}
+
+void print_profit_report(CarNode **head)
+{
+  *head = insertionSort(*head, compare_profits_desending);
+
+  clear_terminal();
+  printf("====================================================================="
+         "=========="
+         "========================================\n");
+  printf("                                          CAR PROFIT RAPORT         "
+         "          "
+         "                                      \n");
+  printf("====================================================================="
+         "=========="
+         "========================================\n");
+  printf("%-10s %-15s %-15s %-15s %-15s %-15s %-15s\n", "ID", "Make", "Model",
+         "Buy Price", "Sell Price", "Status", "Profit");
+  printf("---------------------------------------------------------------------"
+         "----------"
+         "----------------------------------------\n");
+
+  if (head == NULL)
+  {
+    printf("\nNo cars in inventory.\n\n");
+  }
+  else
+  {
+    CarNode *current = *head;
+    int car_count = 0;
+    float total_investment = 0.0;
+    float total_revenue = 0.0;
+    float total_profit = 0.0;
+    int sold_count = 0;
+
+    while (current != NULL)
+    {
+
+      total_investment += current->data.purchase_price;
+
+      printf("%-10d %-15s %-15s €%-14.2f ", current->data.id,
+             current->data.make, current->data.model,
+             current->data.purchase_price);
+
+      if (current->data.has_been_sold)
+      {
+        printf("€%-14.2f %-15s €%-14.2f\n", current->data.selling_price, "Sold",
+               current->data.selling_price - current->data.purchase_price);
+        total_revenue += current->data.selling_price;
+        total_profit +=
+            current->data.selling_price - current->data.purchase_price;
+        sold_count += 1;
+      }
+      else
+      {
+        printf("%-15s %-15s %-15s\n", "N/A", "In Stock", "N/A");
+      }
+
+      current = current->next;
+      car_count++;
+    }
+
+    printf("-------------------------------------------------------------------"
+           "------------"
+           "----------------------------------------\n");
+    printf("Total Cars: %d (Sold: %d, In Stock: %d)\n", car_count, sold_count,
+           car_count - sold_count);
+    printf("Total Investment: €%.2f | Total Revenue: €%.2f | Total Profit: "
+           "€%.2f\n",
+           total_investment, total_revenue, total_profit);
+  }
+
+  printf("====================================================================="
+         "=========="
+         "========================================\n\n");
+  wait_for_enter();
+}
+CarNode *insertionSort(CarNode *head, CompareFunc compare)
+{
+  if (head == NULL || head->next == NULL)
+  {
+    return head;
+  }
+
+  CarNode *sorted = NULL;
+  CarNode *current = head;
+
+  while (current != NULL)
+  {
+    CarNode *next = current->next;
+
+    if (sorted == NULL || compare(&sorted->data, &current->data) >= 0)
+    {
+      current->next = sorted;
+      sorted = current;
+    }
+    else
+    {
+      CarNode *temp = sorted;
+
+      while (temp->next != NULL &&
+             compare(&temp->next->data, &current->data) < 0)
+      {
+        temp = temp->next;
+      }
+      current->next = temp->next;
+      temp->next = current;
+    }
+    current = next;
+  }
+  return sorted;
+}
+
+int compare_profits_desending(const CarData *a, const CarData *b)
+{
+  if (!a->has_been_sold && !b->has_been_sold)
+    return 0;
+  if (a->has_been_sold && !b->has_been_sold)
+    return -1;
+  if (b->has_been_sold && !a->has_been_sold)
+    return 1;
+
+  int profit_a = a->selling_price - a->purchase_price;
+  int profit_b = b->selling_price - b->purchase_price;
+
+  return profit_b - profit_a;
+}
+
+bool search_cars(CarNode *head)
+{
+  clear_terminal();
+  printf("========================================\n");
+  printf("            SEARCH FOR CARS            \n");
+  printf("========================================\n\n");
+
+  printf("Search make or model: ");
+  char input_buffer[MAX_STRING_LENGTH];
+  get_user_input(input_buffer, MAX_STRING_LENGTH);
+
+  char search_term[MAX_STRING_LENGTH];
+  strcpy(search_term, input_buffer);
+  for (int i = 0; search_term[i]; i++)
+  {
+    search_term[i] = tolower(search_term[i]);
+  }
+
+  CarNode *current = head;
+  int count = 0;
+
+  printf("\nSearch Results:\n");
+  printf("----------------------------------------\n");
+
+  while (current != NULL)
+  {
+    char make_lower[MAX_STRING_LENGTH];
+    char model_lower[MAX_STRING_LENGTH];
+
+    strcpy(make_lower, current->data.make);
+    strcpy(model_lower, current->data.model);
+
+    for (int i = 0; make_lower[i]; i++)
+    {
+      make_lower[i] = tolower(make_lower[i]);
+    }
+
+    for (int i = 0; model_lower[i]; i++)
+    {
+      model_lower[i] = tolower(model_lower[i]);
+    }
+
+    if (strstr(make_lower, search_term) != NULL ||
+        strstr(model_lower, search_term) != NULL)
+    {
+
+      printf("ID: %d\n", current->data.id);
+      printf("Make: %s\n", current->data.make);
+      printf("Model: %s\n", current->data.model);
+      printf("Stock Status: %s\n",
+             current->data.has_been_sold ? "In Stock" : "Sold");
+      printf("Buy Price: $%.2f\n", current->data.purchase_price);
+      if (current->data.has_been_sold)
+      {
+        printf("Price sold: %.2f\n", current->data.selling_price);
+      }
+      printf("----------------------------------------\n");
+      count++;
+    }
+
+    current = current->next;
+  }
+
+  if (count == 0)
+  {
+    printf("No cars matching '%s' were found.\n", input_buffer);
+  }
+  else
+  {
+    printf("\nFound %d car(s) matching '%s'.\n", count, input_buffer);
+  }
+
+  printf("\nPress Enter to continue...");
+  get_user_input(input_buffer, MAX_STRING_LENGTH);
+
+  return true;
+}
+
+void stringToLower(char *str)
+{
+  for (int i = 0; str[i]; i++)
+  {
+    str[i] = tolower(str[i]);
+  }
+}
+
+bool stringContains(const char *str, const char *substr)
+{
+  if (str == NULL || substr == NULL)
+  {
+    return false; // Handle null pointers
+  }
+
+  char strLower[strlen(str) + 1];
+  strcpy(strLower, str);
+  stringToLower(strLower);
+
+  char substrLower[strlen(substr) + 1];
+  strcpy(substrLower, substr);
+  stringToLower(substrLower);
+
+  return strstr(strLower, substrLower) != NULL;
+}
+int generate_unique_id(CarNode *head)
+{
+  int new_id;
+  bool id_exists;
+
+  do
+  {
+    new_id = 1000 + rand() % 9000;
+
+    id_exists = false;
+    CarNode *current = head;
+    while (current != NULL)
+    {
+      if (current->data.id == new_id)
+      {
+        id_exists = true;
+        break;
+      }
+      current = current->next;
+    }
+  } while (id_exists);
+
+  return new_id;
+}
+
+bool search_car_by_id(CarNode *head)
+{
+  clear_terminal();
+  printf("========================================\n");
+  printf("            SEARCH CAR BY ID           \n");
+  printf("========================================\n\n");
+
+  printf("Enter car ID: ");
+  char input_buffer[MAX_STRING_LENGTH];
+  get_user_input(input_buffer, MAX_STRING_LENGTH);
+
+  int search_id = strtol(input_buffer, NULL, 10);
+
+  if (search_id <= 0)
+  {
+    printf("\nInvalid ID. Please enter a valid number.\n");
+    wait_for_enter();
+    return false;
+  }
+
+  CarNode *current = head;
+  bool found = false;
+
+  while (current != NULL)
+  {
+    if (current->data.id == search_id)
+    {
+      found = true;
+
+      char purchase_date_str[12];
+      char sell_date_str[12];
+
+      sprintf(purchase_date_str, "%02d/%02d/%d",
+              current->data.purchase_date.tm_mday,
+              current->data.purchase_date.tm_mon + 1,
+              current->data.purchase_date.tm_year + 1900);
+
+      if (current->data.has_been_sold)
+      {
+        sprintf(sell_date_str, "%02d/%02d/%d",
+                current->data.selling_date.tm_mday,
+                current->data.selling_date.tm_mon + 1,
+                current->data.selling_date.tm_year + 1900);
+      }
+      else
+      {
+        strcpy(sell_date_str, "N/A");
+      }
+
+      printf("\n========================================\n");
+      printf("            CAR DETAILS                \n");
+      printf("========================================\n\n");
+
+      printf("%-20s: %d\n", "ID", current->data.id);
+      printf("%-20s: %s\n", "Make", current->data.make);
+      printf("%-20s: %s\n", "Model", current->data.model);
+      printf("%-20s: %s\n", "Purchase Date", purchase_date_str);
+      printf("%-20s: %.1f km\n", "Mileage", current->data.mileage_km);
+      printf("%-20s: €%.2f\n", "Purchase Price", current->data.purchase_price);
+
+      if (current->data.has_been_sold)
+      {
+        printf("%-20s: %s\n", "Selling Date", sell_date_str);
+        printf("%-20s: €%.2f\n", "Selling Price", current->data.selling_price);
+        float profit =
+            current->data.selling_price - current->data.purchase_price;
+        printf("%-20s: €%.2f\n", "Profit", profit);
+        printf("%-20s: %s\n", "Status", "Sold");
+      }
+      else
+      {
+        printf("%-20s: %s\n", "Selling Date", "N/A");
+        printf("%-20s: %s\n", "Selling Price", "N/A");
+        printf("%-20s: %s\n", "Profit", "N/A");
+        printf("%-20s: %s\n", "Status", "In Stock");
+      }
+
+      break;
+    }
+    current = current->next;
+  }
+
+  if (!found)
+  {
+    printf("\nNo car with ID %d was found.\n", search_id);
+  }
+
+  printf("\n");
+  wait_for_enter();
+  return true;
+}
+
+bool sell_car(CarNode *head)
+{
+  clear_terminal();
+  printf("========================================\n");
+  printf("              SELL A CAR               \n");
+  printf("========================================\n\n");
+
+  printf("Enter the ID of the car to sell: ");
+  char input_buffer[MAX_STRING_LENGTH];
+  get_user_input(input_buffer, MAX_STRING_LENGTH);
+
+  int car_id = strtol(input_buffer, NULL, 10);
+
+  CarNode *current = head;
+  bool found = false;
+
+  while (current != NULL)
+  {
+    if (current->data.id == car_id)
+    {
+      found = true;
+
+      if (current->data.has_been_sold)
+      {
+        printf("\nThis car has already been sold.\n");
+        wait_for_enter();
+        return false;
+      }
+
+      // Get selling date
+      printf("\nSelling date:\n");
+      get_date_from_user(&current->data.selling_date);
+
+      // Get selling price
+      printf("Selling price (in euro): ");
+      float selling_price = get_float();
+
+      // Update car data
+      current->data.selling_price = selling_price;
+      current->data.has_been_sold = true;
+
+      float profit = current->data.selling_price - current->data.purchase_price;
+
+      printf("\nCar ID %d sold for €%.2f (Profit: €%.2f)\n", current->data.id,
+             current->data.selling_price, profit);
+
+      wait_for_enter();
+      return true;
+    }
+    current = current->next;
+  }
+
+  if (!found)
+  {
+    printf("\nNo car with ID %d was found.\n", car_id);
+    wait_for_enter();
+  }
+
+  return false;
 }
